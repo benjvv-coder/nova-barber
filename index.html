@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nova Barber</title>
+
+    <style>
+        html {
+    scroll-behavior: smooth;
+}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+                url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+       header {
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+       nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #c9a227;
+}
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 70px;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #bbb;
+            margin: 20px 0 30px;
+        }
+
+        .boton {
+    background-color: #c9a227;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+    display: inline-block;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.boton:hover {
+    background-color: white;
+    color: #111;
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.boton {
+    animation: pulso 2s infinite;
+}
+
+@keyframes pulso {
+    0% {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 5px 30px rgba(201, 162, 39, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+}
+
+
+                .servicios {
+            padding: 80px 8%;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.75);
+        }
+
+        .servicios h2 {
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+
+        .servicios-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .servicio {
+            width: 250px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+        .servicio {
+    transition: transform 0.3s ease, 
+                background 0.3s ease, 
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.servicio:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #c9a227;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.servicio span {
+    color: #c9a227;
+}
+
+        .servicio h3 {
+            font-size: 22px;
+        }
+
+        .servicio p {
+            color: #bbb;
+            line-height: 1.5;
+        }
+
+        .servicio span {
+            display: block;
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+                .contacto {
+            padding: 80px 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        .contacto h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .contacto p {
+            color: #bbb;
+            font-size: 18px;
+            margin: 10px;
+        }
+
+        .contacto .boton {
+            display: inline-block;
+            margin-top: 25px;
+        }
+                @media (max-width: 768px) {
+
+            header {
+                padding: 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            nav a {
+                margin-left: 10px;
+                margin-right: 10px;
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 70vh;
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .servicios {
+                padding: 60px 20px;
+            }
+
+            .servicios h2 {
+                font-size: 30px;
+            }
+
+            .servicio {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .contacto {
+                padding: 60px 20px;
+            }
+
+            .contacto h2 {
+                font-size: 30px;
+            }
+                .footer-contenido {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+.galeria-container {
+    grid-template-columns: 1fr;
+}
+
+.galeria-item {
+    height: 400px;
+}
+
+.galeria h2 {
+    font-size: 30px;
+}
+        }
+                /* ANIMACIONES */
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            animation: aparecer 1s ease-out;
+        }
+
+        .hero p {
+            animation: aparecer 1s ease-out 0.3s both;
+        }
+
+        .hero .boton {
+            animation: aparecer 1s ease-out 0.6s both;
+        }
+
+        .servicios h2 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.servicio:hover {
+    transform: translateY(-10px);
+}
+
+.servicios h2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+        .servicio {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.servicio.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+        .servicio:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .servicio:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .servicio:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .contacto {
+            animation: aparecer 1s ease-out;
+        }
+                .testimonios {
+            padding: 80px 8%;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.75);
+        }
+
+        .testimonios h2 {
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+
+        .testimonios-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+.sobre-nosotros {
+    padding: 100px 8%;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.sobre-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre-imagen {
+    flex: 1;
+}
+
+.sobre-imagen img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.sobre-texto {
+    flex: 1;
+}
+
+.sobre-texto h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.sobre-texto h2 span {
+    color: #c9a227;
+}
+
+.sobre-texto p {
+    color: #bbb;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+
+    .sobre-container {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .sobre-texto h2 {
+        font-size: 30px;
+    }
+
+}
+        .testimonio {
+            width: 250px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .testimonio p {
+            color: #ddd;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .testimonio h3 {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .testimonio,
+.testimonios h2 {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.galeria-item,
+.galeria h2 {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.galeria-item.visible,
+.galeria h2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.testimonio, 
+.testimonios h2 { 
+    opacity: 0; 
+    transform: translateY(40px); 
+    transition: opacity 0.8s ease, transform 0.8s ease; 
+}
+
+
+/* GALERÍA */
+
+.galeria {
+    padding: 100px 8%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.75);
+}
+.reserva {
+    padding: 100px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.reserva h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.reserva h2 span {
+    color: #c9a227;
+}
+
+.reserva-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+
+.reserva-container label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+#servicio-select {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+#fecha-reserva,
+#hora-reserva {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    font-family: Arial, sans-serif;
+}
+
+.reserva-container label {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#precio-reserva {
+    color: #c9a227;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.reserva-container .boton {
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .reserva {
+        padding: 70px 20px;
+    }
+
+    .reserva h2 {
+        font-size: 30px;
+    }
+
+    .reserva-container {
+        padding: 30px 20px;
+    }
+
+}
+
+.galeria h2 {
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.galeria h2 span {
+    color: #c9a227;
+}
+
+.galeria-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.galeria-item {
+    overflow: hidden;
+    border-radius: 10px;
+    height: 350px;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.08);
+}
+
+.testimonio.visible,
+.testimonios h2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+                .footer {
+            padding: 60px 8% 20px;
+            background: #080808;
+        }
+
+        .footer-contenido {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .footer h2 {
+            margin-top: 0;
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            color: #aaa;
+            margin: 8px 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #222;
+            margin-top: 40px;
+            padding-top: 20px;
+            font-size: 14px;
+        }
+        .whatsapp-flotante {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-flotante:hover {
+    transform: scale(1.12);
+}
+
+@media (max-width: 768px) {
+    .whatsapp-flotante {
+        width: 55px;
+        height: 55px;
+        right: 18px;
+        bottom: 18px;
+        font-size: 27px;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">NOVA BARBER</div>
+
+        <nav>
+    <a href="#">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#sobre-nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+    </header>
+
+    <section class="hero">
+
+        <h1>Nova Barber</h1>
+
+        <p>Estilo que habla por ti</p>
+
+        <a href="#contacto" class="boton">RESERVAR HORA</a>
+
+    </section>
+    <section class="servicios" id="servicios">
+
+        <h2>NUESTROS SERVICIOS</h2>
+
+        <div class="servicios-container">
+
+            <div class="servicio">
+                <h3>CORTE CLÁSICO</h3>
+                <p>Corte personalizado según tu estilo.</p>
+                <span>$10.000</span>
+            </div>
+
+            <div class="servicio">
+                <h3>CORTE + BARBA</h3>
+                <p>Corte de cabello y arreglo completo de barba.</p>
+                <span>$15.000</span>
+            </div>
+
+            <div class="servicio">
+                <h3>BARBA</h3>
+                <p>Perfilado y cuidado profesional de barba.</p>
+                <span>$7.000</span>
+            </div>
+
+        </div>
+
+    </section>
+    <section class="contacto" id="contacto">
+
+    <h2>CONTACTO</h2>
+
+    <p>¿Listo para renovar tu estilo?</p>
+
+    <p>📍 Rancagua, Chile</p>
+
+    <a href="https://wa.me/56912345678" class="boton">
+        RESERVAR POR WHATSAPP
+    </a>
+
+</section>
+<section class="reserva">
+
+    <h2>RESERVA TU <span>HORA</span></h2>
+
+    <div class="reserva-container">
+
+        <label for="servicio-select">Elige tu servicio</label>
+
+        <select id="servicio-select">
+            <option value="">Selecciona un servicio</option>
+            <option value="10000">Corte Clásico — $10.000</option>
+            <option value="15000">Corte + Barba — $15.000</option>
+            <option value="7000">Barba — $7.000</option>
+        </select>
+        <label for="fecha-reserva">Elige una fecha</label>
+
+<input type="date" id="fecha-reserva">
+
+<label for="hora-reserva">Elige una hora</label>
+
+<input type="time" id="hora-reserva">
+
+        <div id="precio-reserva">
+            Selecciona un servicio para ver el precio
+        </div>
+
+        <button id="btn-reserva" class="boton">
+    CONTINUAR
+</button>
+
+    </div>
+
+</section>
+<section class="sobre-nosotros" id="sobre-nosotros">
+
+    <div class="sobre-container">
+
+        <div class="sobre-imagen">
+            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=80" alt="Barbero trabajando">
+        </div>
+
+        <div class="sobre-texto">
+
+            <h2>SOBRE <span>NOSOTROS</span></h2>
+
+            <p>
+                En Nova Barber creemos que un buen corte no es solo una cuestión
+                de estilo, sino también de confianza.
+            </p>
+
+            <p>
+                Nuestro objetivo es ofrecer una experiencia profesional,
+                moderna y personalizada para que cada cliente salga
+                sintiéndose en su mejor versión.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="galeria">
+
+    <h2>NUESTROS <span>CORTES</span></h2>
+
+    <div class="galeria-container">
+
+        <div class="galeria-item">
+            <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=700&q=80" alt="Corte de cabello">
+        </div>
+
+        <div class="galeria-item">
+            <img src="https://images.unsplash.com/photo-1622288432450-277d0fef5ed6?auto=format&fit=crop&w=700&q=80" alt="Barbería">
+        </div>
+
+        <div class="galeria-item">
+            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q=80" alt="Barbero trabajando">
+        </div>
+
+    </div>
+
+</section>
+<section class="testimonios">
+
+    <h2>LO QUE DICEN NUESTROS CLIENTES</h2>
+
+    <div class="testimonios-container">
+
+        <div class="testimonio">
+            <p>"Excelente atención y muy buen corte. Volveré sin duda."</p>
+            <h3>— Matías R.</h3>
+        </div>
+
+        <div class="testimonio">
+            <p>"El mejor lugar para cortarse el pelo. Muy profesionales."</p>
+            <h3>— Diego M.</h3>
+        </div>
+
+        <div class="testimonio">
+            <p>"Me encantó el resultado. Ambiente increíble y excelente servicio."</p>
+            <h3>— Nicolás P.</h3>
+        </div>
+
+    </div>
+
+</section>
+<script src="script.js" defer></script>
+<a
+    href="https://wa.me/56912345678"
+    class="whatsapp-flotante"
+    target="_blank"
+    aria-label="Contactar por WhatsApp"
+>
+    ☎
+</a>
+<footer class="footer">
+
+    <div class="footer-contenido">
+
+        <div>
+            <h2>NOVA BARBER</h2>
+            <p>Estilo que habla por ti.</p>
+        </div>
+
+        <div>
+            <h3>HORARIOS</h3>
+            <p>Lunes - Sábado</p>
+            <p>10:00 - 20:00</p>
+        </div>
+
+        <div>
+            <h3>CONTACTO</h3>
+            <p>📍 Rancagua, Chile</p>
+            <p>📱 +56 9 1234 5678</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Nova Barber — Todos los derechos reservados.
+    </div>
+
+</footer>
+</body>
+</html>
